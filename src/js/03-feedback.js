@@ -32,13 +32,11 @@ function populateFormData(e) {
   }
 }
 
-populateFormData();
-
 function onFormSubmit(e) {
   e.preventDefault();
-  if (condition) {
-  }
+
   console.log(JSON.parse(localStorage.getItem(FORM_KEY)));
   e.currentTarget.reset();
   localStorage.removeItem(FORM_KEY);
 }
+populateFormData();
