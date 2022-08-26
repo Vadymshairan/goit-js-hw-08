@@ -12,14 +12,7 @@ player.on(
   }, 1000)
 );
 
-player
-  .setCurrentTime(localStorage.getItem(LOCALSTORAGE_KEY))
-  .then(function (seconds) {})
-  .catch(function (error) {
-    switch (error.name) {
-      case 'RangeError':
-        break;
-      default:
-        break;
-    }
-  });
+const savedTime = localStorage.getItem(LOCALSTORAGE_KEY);
+if (savedTime) {
+  player.setCurrentTime(savedTime);
+}
